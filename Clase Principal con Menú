@@ -1,0 +1,72 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        PanaderiaControlador controlador = new PanaderiaControlador();
+
+        int opcion;
+
+        do {
+            System.out.println(" Menu Panaderia Mendoza ");
+            System.out.println("1. Ingresar Cliente");
+            System.out.println("2. Mostrar Clientes");
+            System.out.println("3. Buscar Cliente por Telefono");
+            System.out.println("4. Ingresar Producto");
+            System.out.println("5. Mostrar Productos");
+            System.out.println("6. Salir");
+            System.out.print("Seleccione una opcion: ");
+            opcion = scanner.nextInt();
+            scanner.nextLine(); // limpiar salto de línea
+
+            switch (opcion) {
+                case 1:
+                    System.out.print("Ingrese nombre del cliente: ");
+                    String nombreCliente = scanner.nextLine();
+                    System.out.print("Ingrese telefono del cliente: ");
+                    String telefono = scanner.nextLine();
+                    System.out.print("Ingrese direccion del cliente: ");
+                    String direccion = scanner.nextLine();
+                    System.out.print("Ingrese correo del cliente: ");
+                    String correo = scanner.nextLine();
+                    controlador.agregarCliente(nombreCliente, telefono, direccion, correo);
+                    break;
+
+                case 2:
+                    controlador.mostrarClientes();
+                    break;
+
+                case 3:
+                    System.out.print("Ingrese el telefono a buscar: ");
+                    String telefonoBuscado = scanner.nextLine();
+                    controlador.buscarClientePorTelefono(telefonoBuscado);
+                    break;
+
+                case 4:
+                    System.out.print("Ingrese nombre del producto: ");
+                    String nombreProducto = scanner.nextLine();
+                    System.out.print("Ingrese precio del producto: ");
+                    double precioProducto = scanner.nextDouble();
+                    System.out.print("Ingrese stock del producto: ");
+                    int stockProducto = scanner.nextInt();
+                    controlador.agregarProducto(nombreProducto, precioProducto, stockProducto);
+                    break;
+
+                case 5:
+                    controlador.mostrarProductos();
+                    break;
+
+                case 6:
+                    System.out.println("¡Gracias por usar el sistema!");
+                    break;
+
+                default:
+                    System.out.println("Opción invalida. Intente nuevamente.");
+                    break;
+            }
+
+        } while (opcion != 6);
+
+        scanner.close();
+    }
+}
