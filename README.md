@@ -3,6 +3,5 @@
  Hola XD
 AÑA
  🥑
- Perra
- Ortiz
+Jorge no seas mujeriego
  
