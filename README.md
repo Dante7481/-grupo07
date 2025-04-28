@@ -1,5 +1,5 @@
 # guia-git-grupo07
- WAZAA :v 
- Hola XD
-Mirkoooo gaaaaaaaaa
-🍀
+Repositorio compartido.
+Guía documentada de Git y GitHub.
+Desarrollo de casos y publicarlos en el repositorio compartido.
+Informe de proyecto
