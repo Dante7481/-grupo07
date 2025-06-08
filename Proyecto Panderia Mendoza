@@ -1,1 +1,69 @@
+public class Cliente {
+    private String nombre;
+    private String dni;
+    private String localidad;
+    private String telefono;
+    private String correo;
 
+    public Cliente(String nombre, String dni, String localidad, String telefono, String correo) {
+        this.nombre = nombre;
+        this.setDni(dni);
+        this.localidad = localidad;
+        this.telefono = telefono;
+        this.correo = correo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        if (dni.length() == 8 && dni.matches("\\d+")) {
+            this.dni = dni;
+        } else {
+            throw new IllegalArgumentException("El DNI debe tener exactamente 8 dígitos numéricos.");
+        }
+    }
+
+    public String getLocalidad() {
+        return localidad;
+    }
+
+    public void setLocalidad(String localidad) {
+        this.localidad = localidad;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public void verDatos() {
+        System.out.println("----- CLIENTE -----");
+        System.out.println("Nombre: " + nombre);
+        System.out.println("DNI: " + dni);
+        System.out.println("Localidad: " + localidad);
+        System.out.println("Telefono: " + telefono);
+        System.out.println("Correo: " + correo);
+        System.out.println("-------------------");
+    }
+}
